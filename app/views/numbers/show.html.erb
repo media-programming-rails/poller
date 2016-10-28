@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Hours:</strong>
+  <%= @number.hours %>
+</p>
+
+<p>
+  <strong>Hash:</strong>
+  <%= @number.hash %>
+</p>
+
+<p>
+  <strong>Poll:</strong>
+  <%= @number.poll %>
+</p>
+
+<%= link_to 'Edit', edit_number_path(@number) %> |
+<%= link_to 'Back', numbers_path %>

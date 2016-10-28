@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  hours: 1
+  hash: MyString
+  poll: one
+
+two:
+  hours: 1
+  hash: MyString
+  poll: two
