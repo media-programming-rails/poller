@@ -1,0 +1,27 @@
+<%= form_for(participation_token) do |f| %>
+  <% if participation_token.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(participation_token.errors.count, "error") %> prohibited this participation_token from being saved:</h2>
+
+      <ul>
+      <% participation_token.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :hash %>
+    <%= f.text_field :hash %>
+  </div>
+
+  <div class="field">
+    <%= f.label :poll_id %>
+    <%= f.text_field :poll_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

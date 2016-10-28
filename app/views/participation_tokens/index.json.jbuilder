@@ -1,0 +1,1 @@
+json.array! @participation_tokens, partial: 'participation_tokens/participation_token', as: :participation_token

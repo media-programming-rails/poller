@@ -1,0 +1,1 @@
+json.partial! "participation_tokens/participation_token", participation_token: @participation_token

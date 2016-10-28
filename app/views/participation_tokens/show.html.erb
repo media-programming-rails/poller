@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Hash:</strong>
+  <%= @participation_token.hash %>
+</p>
+
+<p>
+  <strong>Poll:</strong>
+  <%= @participation_token.poll %>
+</p>
+
+<%= link_to 'Edit', edit_participation_token_path(@participation_token) %> |
+<%= link_to 'Back', participation_tokens_path %>

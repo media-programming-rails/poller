@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Participation Tokens</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Hash</th>
+      <th>Poll</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @participation_tokens.each do |participation_token| %>
+      <tr>
+        <td><%= participation_token.hash %></td>
+        <td><%= participation_token.poll %></td>
+        <td><%= link_to 'Show', participation_token %></td>
+        <td><%= link_to 'Edit', edit_participation_token_path(participation_token) %></td>
+        <td><%= link_to 'Destroy', participation_token, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Participation Token', new_participation_token_path %>
