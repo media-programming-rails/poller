@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %>
+    <%= f.label t('.name') %>
     <%= f.text_field :name %>
   </div>
 
@@ -42,6 +42,7 @@
     <%= f.check_box :open %>
   </div>
 </td></tr></table>
+
   <div class="field">
     <%= f.label :answer_type %>
     <%= f.text_field :answer_type %>
@@ -50,6 +51,6 @@
 
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit t('.submit') %>
   </div>
 <% end %>

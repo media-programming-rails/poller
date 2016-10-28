@@ -21,3 +21,8 @@
 
 en:
   hello: "Hello world"
+  polls:
+    form:
+      name: Poll Name
+      description: Poll Description
+      submit: Create new Poll

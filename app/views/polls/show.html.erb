@@ -30,5 +30,14 @@
   <%= @poll.answer_type %>
 </p>
 
+<hr>
+<h2>Participation Keys</h2>
+Please send these participation links to the participants:
+
+<pre>
+  <% @poll.participation_tokens.each do | participant | %>
+  <%= participitation_url(@poll,participant.participation_key) %>
+  <% end %>
+</pre>
 <%= link_to 'Edit', edit_poll_path(@poll) %> |
 <%= link_to 'Back', polls_path %>
