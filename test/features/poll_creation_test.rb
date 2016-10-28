@@ -13,6 +13,8 @@ class OneClickLogTest < ActionDispatch::IntegrationTest
     click_on t('polls.form.submit')
     assert page.has_content? 'Poll was successfully created.'
 
+    participation_tokens = Poll.last.participation_tokens
+    assert_equal 10, participation_tokens.size
   end
 
 

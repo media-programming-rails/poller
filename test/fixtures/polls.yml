@@ -1,17 +1,20 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
+  name: Some Test Poll
   description: MyText
   instant_result: false
   public_result: false
-  open: 
-  answer_type: MyString
+  open: true
+  answer_type: Number
+  participants: 5
+
 
 two:
   name: MyString
   description: MyText
   instant_result: false
   public_result: false
-  open: 
-  answer_type: MyString
+  open:
+  answer_type: Number
+  participants: 5

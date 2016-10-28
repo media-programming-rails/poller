@@ -3,6 +3,14 @@ require 'test_helper'
 class PollsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @poll = polls(:one)
+    @valid_poll_params =
+      { answer_type: @poll.answer_type,
+        description: @poll.description,
+        instant_result: @poll.instant_result,
+        name: @poll.name,
+        open: @poll.open,
+        public_result: @poll.public_result,
+        participants: @poll.participants }
   end
 
   test "should get index" do
@@ -17,7 +25,7 @@ class PollsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create poll" do
     assert_difference('Poll.count') do
-      post polls_url, params: { poll: { answer_type: @poll.answer_type, description: @poll.description, instant_result: @poll.instant_result, name: @poll.name, open: @poll.open, public_result: @poll.public_result } }
+      post polls_url, params: { poll: @valid_poll_params}
     end
 
     assert_redirected_to poll_url(Poll.last)
