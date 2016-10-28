@@ -1,0 +1,47 @@
+<%= form_for(poll) do |f| %>
+  <% if poll.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(poll.errors.count, "error") %> prohibited this poll from being saved:</h2>
+
+      <ul>
+      <% poll.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :instant_result %>
+    <%= f.check_box :instant_result %>
+  </div>
+
+  <div class="field">
+    <%= f.label :public_result %>
+    <%= f.check_box :public_result %>
+  </div>
+
+  <div class="field">
+    <%= f.label :open %>
+    <%= f.text_field :open %>
+  </div>
+
+  <div class="field">
+    <%= f.label :answer_type %>
+    <%= f.text_field :answer_type %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

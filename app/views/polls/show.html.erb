@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @poll.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @poll.description %>
+</p>
+
+<p>
+  <strong>Instant result:</strong>
+  <%= @poll.instant_result %>
+</p>
+
+<p>
+  <strong>Public result:</strong>
+  <%= @poll.public_result %>
+</p>
+
+<p>
+  <strong>Open:</strong>
+  <%= @poll.open %>
+</p>
+
+<p>
+  <strong>Answer type:</strong>
+  <%= @poll.answer_type %>
+</p>
+
+<%= link_to 'Edit', edit_poll_path(@poll) %> |
+<%= link_to 'Back', polls_path %>
