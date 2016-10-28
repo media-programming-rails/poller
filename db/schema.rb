@@ -14,18 +14,18 @@ ActiveRecord::Schema.define(version: 20161028145105) do
 
   create_table "numbers", force: :cascade do |t|
     t.integer  "hours"
-    t.string   "hash"
+    t.string   "participation_key"
     t.integer  "poll_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
     t.index ["poll_id"], name: "index_numbers_on_poll_id"
   end
 
   create_table "participation_tokens", force: :cascade do |t|
-    t.string   "hash"
+    t.string   "participation_key"
     t.integer  "poll_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
     t.index ["poll_id"], name: "index_participation_tokens_on_poll_id"
   end
 

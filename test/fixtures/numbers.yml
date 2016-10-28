@@ -2,10 +2,10 @@
 
 one:
   hours: 1
-  hash: MyString
+  participation_key: MyString
   poll: one
 
 two:
   hours: 1
-  hash: MyString
+  participation_key: MyString
   poll: two

@@ -17,7 +17,7 @@ class ParticipationTokensControllerTest < ActionDispatch::IntegrationTest
 
   test "should create participation_token" do
     assert_difference('ParticipationToken.count') do
-      post participation_tokens_url, params: { participation_token: { hash: @participation_token.hash, poll_id: @participation_token.poll_id } }
+      post participation_tokens_url, params: { participation_token: { participation_key: @participation_token.participation_key, poll_id: @participation_token.poll_id } }
     end
 
     assert_redirected_to participation_token_url(ParticipationToken.last)
@@ -34,7 +34,7 @@ class ParticipationTokensControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update participation_token" do
-    patch participation_token_url(@participation_token), params: { participation_token: { hash: @participation_token.hash, poll_id: @participation_token.poll_id } }
+    patch participation_token_url(@participation_token), params: { participation_token: { participation_key: @participation_token.participation_key, poll_id: @participation_token.poll_id } }
     assert_redirected_to participation_token_url(@participation_token)
   end
 

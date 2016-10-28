@@ -17,7 +17,7 @@ class NumbersControllerTest < ActionDispatch::IntegrationTest
 
   test "should create number" do
     assert_difference('Number.count') do
-      post numbers_url, params: { number: { hash: @number.hash, hours: @number.hours, poll_id: @number.poll_id } }
+      post numbers_url, params: { number: { participation_key: @number.participation_key, hours: @number.hours, poll_id: @number.poll_id } }
     end
 
     assert_redirected_to number_url(Number.last)
@@ -34,7 +34,7 @@ class NumbersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update number" do
-    patch number_url(@number), params: { number: { hash: @number.hash, hours: @number.hours, poll_id: @number.poll_id } }
+    patch number_url(@number), params: { number: { participation_key: @number.participation_key, hours: @number.hours, poll_id: @number.poll_id } }
     assert_redirected_to number_url(@number)
   end
 

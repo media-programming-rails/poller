@@ -1,3 +1,3 @@
-class Number < ApplicationRecord
-  belongs_to :poll
+class Number < Answer
+
 end
