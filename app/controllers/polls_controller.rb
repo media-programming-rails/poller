@@ -1,5 +1,26 @@
 class PollsController < ApplicationController
-  before_action :set_poll, only: [:show, :edit, :update, :destroy]
+  before_action :set_poll, only: [:show, :edit, :update, :destroy, :participate]
+
+  def participate
+    #byebug
+    respond_to do |format|
+      if pt = valid_partication_token
+        @number = @poll.numbers.build(participation_key: pt.participation_key)
+        format.html { render "numbers/new"}
+        format.json {}
+      else
+        flash[:notice] =  "oops"
+      end
+    end
+  end
+
+  def valid_partication_token
+    key = params['participation_token']
+    return nil unless key
+    tokens = @poll.participation_tokens.where(participation_key: "UGvujfUNR6GBQWmOGtIREg")
+    return nil if tokens.empty?
+    tokens.first
+  end
 
   # GET /polls
   # GET /polls.json

@@ -1,5 +1,5 @@
 class Poll < ApplicationRecord
-  has_many :answers #, dependent: :destroy
+  has_many :numbers #, dependent: :destroy
   has_many :participation_tokens, dependent: :destroy
   after_create :generate_participation_tokens
 
