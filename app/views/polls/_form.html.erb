@@ -20,26 +20,34 @@
     <%= f.label :description %>
     <%= f.text_area :description %>
   </div>
+  <div class="field">
+    <%= f.label :participants %>
+    <%= f.number_field :participants %>
+  </div>
 
+<table ><tr>
+  <td>
   <div class="field">
     <%= f.label :instant_result %>
     <%= f.check_box :instant_result %>
   </div>
-
+</td><td>
   <div class="field">
     <%= f.label :public_result %>
     <%= f.check_box :public_result %>
   </div>
-
+</td><td>
   <div class="field">
     <%= f.label :open %>
-    <%= f.text_field :open %>
+    <%= f.check_box :open %>
   </div>
-
+</td></tr></table>
   <div class="field">
     <%= f.label :answer_type %>
     <%= f.text_field :answer_type %>
   </div>
+
+
 
   <div class="actions">
     <%= f.submit %>

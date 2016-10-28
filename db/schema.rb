@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20161028145105) do
     t.boolean  "public_result"
     t.boolean  "open"
     t.string   "answer_type"
+    t.integer  "participants"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end

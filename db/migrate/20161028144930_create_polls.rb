@@ -7,6 +7,7 @@ class CreatePolls < ActiveRecord::Migration[5.0]
       t.boolean :public_result
       t.boolean :open
       t.string :answer_type
+      t.integer :participants
 
       t.timestamps
     end

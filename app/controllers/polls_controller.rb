@@ -14,7 +14,7 @@ class PollsController < ApplicationController
 
   # GET /polls/new
   def new
-    @poll = Poll.new
+    @poll = Poll.new(open: true, answer_type: "Number", participants: 30)
   end
 
   # GET /polls/1/edit
