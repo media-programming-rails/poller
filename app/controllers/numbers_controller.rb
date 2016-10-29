@@ -28,7 +28,7 @@ class NumbersController < ApplicationController
 
     respond_to do |format|
       if @number.save
-        format.html { redirect_to @number, notice: 'Number was successfully created.' }
+        format.html { redirect_to @number, notice: I18n.t('thank_you') }
         format.json { render :show, status: :created, location: @number }
       else
         format.html { render :new }

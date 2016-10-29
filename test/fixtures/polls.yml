@@ -1,5 +1,16 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
+
+hours:
+  name: How long did it take?
+  description: Poll description goes here.
+  instant_result: false
+  public_result: false
+  open: true
+  answer_type: Number
+  participants: 10
+
+
 one:
   name: Some Test Poll
   description: MyText

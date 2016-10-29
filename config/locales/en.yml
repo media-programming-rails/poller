@@ -21,8 +21,13 @@
 
 en:
   hello: "Hello world"
+  thank_you: "Thank you for your participation!"
+  warning_fraud: "Answer attempt invalid, wrong participation key?w"
   polls:
     form:
       name: Poll Name
       description: Poll Description
       submit: Create new Poll
+  numbers:
+    form:
+      submit: Send Answer

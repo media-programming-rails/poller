@@ -16,17 +16,10 @@
     <%= f.number_field :hours %>
   </div>
 
-  <div class="field">
-    <%= f.label :hash %>
-    <%= f.text_field :hash %>
-  </div>
-
-  <div class="field">
-    <%= f.label :poll_id %>
-    <%= f.text_field :poll_id %>
-  </div>
+    <%= f.hidden_field :participation_key %>
+    <%= f.hidden_field :poll_id %>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit t('.submit')%>
   </div>
 <% end %>
