@@ -28,10 +28,15 @@ class Poll < ApplicationRecord
   end
 end
 
-class PollTokenValidator
+class PollValidator < ActiveModel::Validator
   def validate(record)
-    unless record.poll.valid_participation_token?(record.participation_token)
-      record.errors[:name] << 'Answer cannot be associated with this poll'
+    poll = record.poll
+    unless record.poll.valid_participation_token?(record.participation_key)
+      record.errors[:poll] << 'Invalid participation token for this poll'
+    else
+      unless poll.register_answer(record)
+        record.errors[:poll] << 'Answer could not be registered with this poll'
+      end
     end
   end
 end

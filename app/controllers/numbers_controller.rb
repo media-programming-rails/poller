@@ -26,11 +26,11 @@ class NumbersController < ApplicationController
   def create
     @number = Number.new(number_params)
     respond_to do |format|
-      if @number.save && @number.poll.register_answer(@number)
+      if @number.save
         format.html { redirect_to @number, notice: I18n.t('thank_you') }
         format.json { render :show, status: :created, location: @number }
       else
-        format.html { render :new }
+        format.html { redirect_to root_path, notice: I18n.t('.warning_fraud') }
         format.json { render json: @number.errors, status: :unprocessable_entity }
       end
     end
