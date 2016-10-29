@@ -35,8 +35,8 @@
 Please send these participation links to the participants:
 
 <pre>
-  <% @poll.participation_tokens.each do | participant | %>
-  <%= participitation_url(@poll,participant.participation_key) %>
+  <% @participation_urls.each do | url | %>
+<%= url %>
   <% end %>
 </pre>
 <%= link_to 'Edit', edit_poll_path(@poll) %> |
