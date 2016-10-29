@@ -6,6 +6,14 @@ class Poll < ApplicationRecord
   validates :name, :participants, presence: true
   validates :participants, numericality: true
 
+  def number_histogram
+    results = numbers.map(&:hours)
+    #byebug
+    max = results.empty? ? 0 : results.max + 1
+    histogram = Array.new(max,0)
+    results.each {|r| histogram[r] = histogram[r]+1}
+    histogram
+  end
 
   def generate_participation_tokens
     participants.times do

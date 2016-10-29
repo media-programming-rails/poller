@@ -34,6 +34,7 @@ class PollsController < ApplicationController
   # GET /polls/1.json
   def show
     @participation_urls = participation_urls(@poll)
+    @answers = @poll.number_histogram
   end
 
   # GET /polls/new

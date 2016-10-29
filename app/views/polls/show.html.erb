@@ -30,6 +30,21 @@
   <%= @poll.answer_type %>
 </p>
 
+
+<h3> Results </h3>
+<table border = "1"><tr>
+  <% for i in 0..@answers.size-1 do %>
+  <th><%= i %></th>
+  <% end %>
+</tr><tr>
+  <% for i in 0..@answers.size-1 do %>
+  <th><%= @answers[i]%></th>
+  <% end %>
+</tr>
+</table>
+
+
+<% if @poll.open %>
 <hr>
 <h2>Participation Keys</h2>
 Please send these participation links to the participants:
@@ -39,5 +54,9 @@ Please send these participation links to the participants:
 <%= url %>
   <% end %>
 </pre>
+
+<% end %>
+
+
 <%= link_to 'Edit', edit_poll_path(@poll) %> |
 <%= link_to 'Back', polls_path %>
