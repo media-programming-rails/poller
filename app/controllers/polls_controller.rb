@@ -9,7 +9,6 @@ class PollsController < ApplicationController
       if (pt = valid_partication_token).nil?
         format.html {flash[:notice] =  "Participation URL is not valid"}
       else
-        
         @number = @poll.numbers.build(participation_key: pt.participation_key)
         format.html { render "numbers/new"}
       end

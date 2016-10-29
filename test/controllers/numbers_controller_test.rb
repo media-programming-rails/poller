@@ -10,11 +10,6 @@ class NumbersControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get new" do
-    get new_number_url
-    assert_response :success
-  end
-
   test "should create number" do
     assert_difference('Number.count') do
       post numbers_url, params: { number: { participation_key: @number.participation_key, hours: @number.hours, poll_id: @number.poll_id } }

@@ -25,9 +25,8 @@ class NumbersController < ApplicationController
   # POST /numbers.json
   def create
     @number = Number.new(number_params)
-
     respond_to do |format|
-      if @number.save
+      if @number.save && @number.poll.register_answer(@number)
         format.html { redirect_to @number, notice: I18n.t('thank_you') }
         format.json { render :show, status: :created, location: @number }
       else
@@ -69,6 +68,6 @@ class NumbersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def number_params
-      params.require(:number).permit(:hours, :hash, :poll_id)
+      params.require(:number).permit(:hours, :hash, :poll_id, :participation_key)
     end
 end

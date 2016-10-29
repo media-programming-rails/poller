@@ -22,7 +22,8 @@
 en:
   hello: "Hello world"
   thank_you: "Thank you for your participation!"
-  warning_fraud: "Answer attempt invalid, wrong participation key?w"
+  warning_fraud: "Answer attempt invalid, wrong participation key?"
+  invalid_participation_url: "Participation Key or URL not Valid."
   polls:
     form:
       name: Poll Name
