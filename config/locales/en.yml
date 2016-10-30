@@ -22,13 +22,12 @@
 en:
   hello: "Hello world"
   thank_you: "Thank you for your participation!"
-  warning_fraud: "Answer attempt invalid, wrong participation key?"
-  invalid_participation_url: "Participation Key or URL not Valid."
+  invalid_participation_url: "Participation Key or URL not valid."
   polls:
     form:
       name: Poll Name
       description: Poll Description
-      submit: Create new Poll
+      submit: Save Poll
   numbers:
     form:
       submit: Send Answer

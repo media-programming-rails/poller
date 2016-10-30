@@ -9,8 +9,6 @@ class ParticipationViewsTest < ActionDispatch::IntegrationTest
     assert !page.has_content?("Hash"), "Participation Key Should not be included"
     assert page.has_content?(poll.name), "Poll name should be shown"
     click_on poll.name
-    save_and_open_page
     assert page.has_content?(poll.name), "Poll name should be shown"
-
   end
 end

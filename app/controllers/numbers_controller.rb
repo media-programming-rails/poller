@@ -31,7 +31,7 @@ class NumbersController < ApplicationController
         format.html { redirect_to @number, notice: I18n.t('thank_you') }
         format.json { render :show, status: :created, location: @number }
       else
-        format.html { redirect_to root_path, notice: I18n.t('.warning_fraud') }
+        format.html { redirect_to poll_path(@number.poll), notice: I18n.t('.invalid_participation_url') }
         format.json { render json: @number.errors, status: :unprocessable_entity }
       end
     end

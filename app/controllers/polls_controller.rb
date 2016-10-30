@@ -5,9 +5,8 @@ class PollsController < ApplicationController
   def participate
 
     respond_to do |format|
-
       if (pt = valid_partication_token).nil?
-        format.html {flash[:notice] =  "Participation URL is not valid"}
+        format.html { redirect_to @poll, notice: I18n.t('.invalid_participation_url') }
       else
         @number = @poll.numbers.build(participation_key: pt.participation_key)
         format.html { render "numbers/new"}

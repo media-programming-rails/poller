@@ -34,10 +34,13 @@ class PollParticipationTest < ActionDispatch::IntegrationTest
     click_on t('numbers.form.submit')
     assert page.has_content?(t('.thank_you')), "Response should have been saved & acknowledged"
 
-    visit participation_path
-    assert !page.has_content?(@poll.name), "should not be on poll page"
+    get participation_path
+    assert_redirected_to poll_path(@poll)
 
-  end
+    visit participation_path
+    assert page.has_content?(@poll.name), "should be redirected to poll page"
+    assert page.has_content?(t('.invalid_participation_url')), "should warn about invalid url/hash"
+end
 
   test "used participation url should not be shown on poll page" do
 
@@ -62,7 +65,7 @@ class PollParticipationTest < ActionDispatch::IntegrationTest
   test "url with invalid key should not show participation form" do
     participation_path =   participitation_url(@poll,"not_a_proper_key")
     visit participation_path
-    assert !page.has_content?(@poll.name)
+    assert page.has_content?(@poll.name), "redirects to poll page"
     assert page.has_content?(t('invalid_participation_url')), "should contain proper warning"
   end
 
@@ -70,7 +73,7 @@ class PollParticipationTest < ActionDispatch::IntegrationTest
     assert_no_difference('Number.count') do
       post numbers_url, params: { number: { participation_key: "invalid_key", hours: 4, poll_id: @poll.id } }
     end
-    assert_redirected_to root_path
+    assert_redirected_to poll_path(@poll)
   end
 
 
