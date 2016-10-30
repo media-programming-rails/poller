@@ -52,3 +52,8 @@ group :test do
   gem 'capybara'
   gem 'launchy'
 end
+
+# gems for sending out email independently from rails
+group :development do
+  gem 'pony'
+end
