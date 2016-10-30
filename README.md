@@ -9,14 +9,21 @@ Emails can either be sent out by the app if a list of emails is provided
 or a list of participation hashes can be copied and sent out by a script
 (to avoid sending emails out to another, possibly us-based, computer).
 
+### Implemented
 1. (story 1) Poll creation: Admin can create polls by specifying the maximimum number of participants. A list of participation hashes will be shown to the Admin
 2. (story 2) A script is provided to the admin to send out the participation hashes from a local computer.
+3. (story 3) Poll participation: using the participation link, users can participate in the poll exactly once.
 
-2. Poll participation:
+### Stories for Authentication
+1. only administrators can create and edit polls
+2. only administrators can access the participation url list for the poll
+
+### further security stories
+3. no participation tokens can be accessed by non-admin (general) users
+
+### Backlog
 4. Poll results: The poll page shows the poll results either
     - instantly; that is, all received votes
-
-
 2. Poll creation with emails: an admin can paste a list of emails to the poll, participation hashes are sent out atomatically to all emails. Email adresses will not be stored, only a salted hash to ensure that each email only gets to participate once.
 3. Poll participation: Participants receive an email with an url including the participation hash which leads directly to the poll participation page.
 4. Poll results: The poll page shows the poll results either

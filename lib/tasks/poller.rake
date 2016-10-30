@@ -5,7 +5,7 @@ namespace :poller do
   end
 end
 $MAIL = "Please take part in my poll! - use this link to participate: \n"
-TESTRUN = true
+TESTRUN = false
 class URLMailer
   def mail
     return nil unless check_settings
