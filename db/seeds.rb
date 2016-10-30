@@ -6,6 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
+User.delete_all
+User.create(name: "Barne", password: "geheim", password_confirmation: "geheim")
+
+Poll.delete_all
+Number.delete_all
+Token.delete_all 
 n = 40
 range = 8
 poll = Poll.create(name: "Poll with all answers", participants: n, open:true, public_result: false, instant_result:true)
