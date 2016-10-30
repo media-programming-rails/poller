@@ -23,7 +23,6 @@ class PollParticipationTest < ActionDispatch::IntegrationTest
     fill_in :number_hours, with: 5
     click_on t('numbers.form.submit')
     assert page.has_content?(t('.thank_you')), "Response should have been saved & acknowledged"
-
   end
 
   test "second poll participation should not possible" do

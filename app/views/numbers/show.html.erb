@@ -1,18 +1,15 @@
-<p id="notice"><%= notice %></p>
 
+<h1><%= @poll.name %></h1>
+<p id="notice"><%= notice %></p>
+<p>Your answer: </p>
 <p>
   <strong>Hours:</strong>
   <%= @number.hours %>
 </p>
 
 <p>
-  <strong>Hash:</strong>
-  <%= @number.hash %>
-</p>
-
-<p>
-  <strong>Poll:</strong>
-  <%= @number.poll %>
+  <strong>View Poll:</strong>
+  <%= link_to @poll.name, @poll  %>
 </p>
 
 <%= link_to 'Edit', edit_number_path(@number) %> |
