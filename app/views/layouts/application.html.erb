@@ -10,5 +10,10 @@
 
   <body>
     <%= yield %>
+    <hr/>Poller Application -
+    <% if logged_in? %> Logged in as <%= link_to current_user.name, current_user %>
+    - <%= link_to "Logout", logout_path, method: :delete %>
+    <% else %> <%= link_to "Log in", login_path %><% end %>
+      <hr/>
   </body>
 </html>

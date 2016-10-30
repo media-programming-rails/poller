@@ -43,7 +43,7 @@
 </tr>
 </table>
 
-
+<% if logged_in? %>
 <% if @poll.open %>
 <hr>
 <h2>Participation Keys</h2>
@@ -54,9 +54,9 @@ Please send these participation links to the participants:
 <%= url %>
   <% end %>
 </pre>
-
 <% end %>
-
-
+<hr/>
 <%= link_to 'Edit', edit_poll_path(@poll) %> |
 <%= link_to 'Back', polls_path %>
+
+<% end %>

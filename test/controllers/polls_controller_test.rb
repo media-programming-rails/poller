@@ -1,7 +1,9 @@
 require 'test_helper'
 
 class PollsControllerTest < ActionDispatch::IntegrationTest
+
   setup do
+    login_as(users(:one))
     @poll = polls(:one)
     @valid_poll_params =
       { answer_type: @poll.answer_type,

@@ -1,4 +1,5 @@
 class NumbersController < ApplicationController
+  skip_before_action :authorize, only: [:create, :new]
   before_action :set_number, only: [:show, :edit, :update, :destroy]
 
   # GET /numbers
@@ -28,7 +29,7 @@ class NumbersController < ApplicationController
     @number = Number.new(number_params)
     respond_to do |format|
       if @number.save
-        format.html { redirect_to @number, notice: I18n.t('thank_you') }
+        format.html { redirect_to @number.poll, notice: I18n.t('thank_you') }
         format.json { render :show, status: :created, location: @number }
       else
         format.html { redirect_to poll_path(@number.poll), notice: I18n.t('.invalid_participation_url') }
