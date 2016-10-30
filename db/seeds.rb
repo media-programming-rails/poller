@@ -8,11 +8,11 @@
 
 
 User.delete_all
-User.create(name: "Barne", password: "geheim", password_confirmation: "geheim")
+User.create(name: "Barne", password: "secret", password_confirmation: "secret")
 
 Poll.delete_all
 Number.delete_all
-Token.delete_all 
+ParticipationToken.delete_all
 n = 40
 range = 8
 poll = Poll.create(name: "Poll with all answers", participants: n, open:true, public_result: false, instant_result:true)
