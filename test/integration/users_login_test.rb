@@ -35,29 +35,4 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
   end
 
 
-  test "links when logged in" do
-    post login_path, params: { session: @user_params}
-    assert is_logged_in?, "must be logged in now"
-    assert_redirected_to root_path
-    follow_redirect!
-    assert_select "a[href=?]", login_path, count: 0
-    assert_select "a[href=?]", logout_path
-    assert_select "a[href=?]", user_path(@user)
-  end
-  test "links when not logged in" do
-    get root_path
-    assert_select "a[href=?]", login_path
-    assert_select "a[href=?]", logout_path,      count: 0
-    assert_select "a[href=?]", user_path(@user), count: 0
-  end
-  test "links when logged out" do
-    post login_path, params: { session: @user_params}
-    assert is_logged_in?, "must be logged in now"
-    delete logout_path
-    assert_redirected_to root_path
-    follow_redirect!
-    assert_select "a[href=?]", login_path
-    assert_select "a[href=?]", logout_path,      count: 0
-    assert_select "a[href=?]", user_path(@user), count: 0
-  end
 end

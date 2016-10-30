@@ -3,6 +3,7 @@ require 'test_helper'
 class ParticipationTokensControllerTest < ActionDispatch::IntegrationTest
   setup do
     @participation_token = participation_tokens(:one)
+    login_as(users(:one))
   end
 
   test "should get index" do

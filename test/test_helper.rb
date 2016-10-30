@@ -16,6 +16,14 @@ class ActionDispatch::IntegrationTest
   # Make the Capybara DSL available in all integration tests
   include Capybara::DSL
 
+  def login_as(user)
+    post login_url, params: {session: { name:  user.name, password: 'secret'}}
+  end
+
+  def logout
+    delete logout_url
+  end
+
   def login_for_capybara(user)
     visit login_path
     fill_in "Name", with: user.name

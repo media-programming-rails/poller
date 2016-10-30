@@ -7,8 +7,7 @@ class LoginLogoutTest < ActionDispatch::IntegrationTest
     fill_in "Name", with: user.name
     fill_in "Password", with: 'secret'
     click_button "Log in"
-
-
     assert page.has_content?("Polls"), "Should have redirected to Polls page"
+    assert page.has_content? "Log in"
   end
 end
