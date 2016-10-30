@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :users
   resources :numbers
   resources :participation_tokens
   resources :polls
