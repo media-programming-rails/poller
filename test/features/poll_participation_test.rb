@@ -18,7 +18,6 @@ class PollParticipationTest < ActionDispatch::IntegrationTest
 
   test "poll participation" do
     participation_path = participation_urls(@poll).first
-
     visit participation_path
     fill_in :number_hours, with: 5
     click_on t('numbers.form.submit')

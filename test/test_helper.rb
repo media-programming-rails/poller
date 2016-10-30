@@ -16,6 +16,14 @@ class ActionDispatch::IntegrationTest
   # Make the Capybara DSL available in all integration tests
   include Capybara::DSL
 
+  def login_for_capybara(user)
+    visit login_path
+    fill_in "Name", with: user.name
+    fill_in "Password", with: 'secret'
+    click_button "Log in"
+  end
+
+
   # Reset sessions and driver between tests
   # Use super wherever this method is redefined in your individual test classes
   def teardown
