@@ -1,4 +1,5 @@
 class PollsController < ApplicationController
+  skip_before_action :authorize, only: [:participate, :show]
   include PollsHelper
   before_action :set_poll, only: [:show, :edit, :update, :destroy, :participate]
 
