@@ -4,12 +4,6 @@ class SessionsController < ApplicationController
   end
 
   def create
-  end
-
-  def destroy
-  end
-
-  def create
     user = User.find_by(name: params[:session][:name])
     if user.try(:authenticate, params[:session][:password])
       log_in(user)
