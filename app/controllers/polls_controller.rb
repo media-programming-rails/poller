@@ -12,7 +12,6 @@ class PollsController < ApplicationController
         @number = @poll.numbers.build(participation_key: pt.participation_key)
         format.html { render "numbers/new"}
       end
-
     end
   end
 
