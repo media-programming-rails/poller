@@ -10,6 +10,8 @@
 
   <body>
     <%= yield %>
+    Current User: <%= @current_user %> method: <%= current_user %> Current User: <%= @current_user %>
+      logged in: <%= logged_in? %><hr/> 
     <hr/>Poller Application -
     <% if logged_in? %> Logged in as <%= link_to current_user.name, current_user %>
     - <%= link_to "Logout", logout_path, method: :delete %>
